@@ -1,1 +1,23 @@
-<p>professor-list works!</p>
+<h2>Professorenliste</h2>
+<table>
+  <tr>
+    <th>Nr.</th>
+    <th>Vorname</th>
+    <th>Nachname</th>
+    <th>Kürzel</th>
+  </tr>
+  <tr *ngFor="let professor of professoren; let i=index;"
+      (click)="selektiereProfessor(professor, $event)"
+      class="{{professor == selektierterProfessor ? 'ausgewaehlt' : ''}}">
+    <td>{{i + 1}}</td>
+    <td>{{professor.vorname}}</td>
+    <td>{{professor.nachname}}</td>
+    <td>{{professor.kuerzel}}</td>
+    <button (click)="delete(professor)">Löschen</button>
+  </tr>
+</table>
+<app-professor-details *ngIf="selektierterProfessor"
+                       [professor]="selektierterProfessor" ></app-professor-details>
+
+
+
