@@ -13,9 +13,13 @@
     <td>{{professor.vorname}}</td>
     <td>{{professor.nachname}}</td>
     <td>{{professor.kuerzel}}</td>
+    <button routerLink="../edit/{{professor.kuerzel}}">Ändern</button>
     <button (click)="delete(professor)">Löschen</button>
   </tr>
 </table>
+<p>
+  <button routerLink="../create">Erstellen</button>
+</p>
 <app-professor-details *ngIf="selektierterProfessor"
                        [professor]="selektierterProfessor" ></app-professor-details>
 

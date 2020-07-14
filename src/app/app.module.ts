@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {ProfessorModule} from './professor/professor.module';
+import {AppRouterModule} from "./app-router/app-router.module";
+import {RouterModule} from "@angular/router";
+import {LoginModule} from "./login/login.module";
 
 @NgModule({
   declarations: [
@@ -11,7 +14,11 @@ import {ProfessorModule} from './professor/professor.module';
   ],
   imports: [
     BrowserModule,
-    ProfessorModule
+    RouterModule,
+    ProfessorModule,
+    AppRouterModule,
+    LoginModule
+
 
   ],
   providers: [],

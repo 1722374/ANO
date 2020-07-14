@@ -1,1 +1,14 @@
-<p>professor-edit works!</p>
+<h2>Professor ändern</h2>
+<p (change)="onChange()">
+  <label for="vorname">Vorname:</label>
+  <input [(ngModel)]="professor.vorname" id="vorname" placeholder="vorname">
+  <label for="nachname">Nachname:</label>
+  <input [(ngModel)]="professor.nachname" id="nachname" placeholder="nachname">
+  <label for="kuerzel">Kürzel:</label>
+  <input [(ngModel)]="professor.kuerzel" id="kuerzel" placeholder="kuerzel">
+  <label for="raum">Raum:</label>
+  <input [(ngModel)]="professor.raum" id="raum" placeholder="raum">
+</p>
+<p>
+  <button (click)="update(professor)">Speichern</button>
+</p>
